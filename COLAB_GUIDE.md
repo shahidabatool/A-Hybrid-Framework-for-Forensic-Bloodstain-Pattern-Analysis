@@ -41,8 +41,8 @@ If you want to run the code using the files on your Google Drive:
 ```python
 from google.colab import drive
 drive.mount('/content/drive')
-# Navigate directly to the shortcut folder:
-%cd /content/drive/MyDrive/MRP
+# Navigate directly to the folder:
+%cd /content/drive/MyDrive/A-Hybrid-Framework-for-Forensic-Bloodstain-Pattern-Analysis/MRP
 ```
 
 ---
