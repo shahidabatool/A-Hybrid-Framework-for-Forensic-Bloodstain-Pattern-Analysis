@@ -1,6 +1,6 @@
 # Forensic Bloodstain Pattern Analysis (BPA) & Time Since Deposition (TSD) Estimation
 **Toronto Metropolitan University — Major Research Project (MRP)**  
-*Master of Data Science — Decision Support System*
+*Master of Data Science *
 
 ---
 
