@@ -1,0 +1,25 @@
+# Python Virtual Environments & Caches
+mrp_env/
+venv/
+bpa_venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+
+# Workspace Large Datasets (Excluded from Git Push)
+Raw_dataset/
+Task_1_Classification/Data/
+Task_2_TSD/Text/BloodNet_50k_Images/
+Task_2_TSD/Text/BloodNet_50k_Images.zip
+
+# Model Weights Checkpoints (Excluded due to GitHub 100MB limits; shared via Drive)
+*.pth
+
+# Local configuration files
+.vscode/
+.idea/
+.streamlit/
