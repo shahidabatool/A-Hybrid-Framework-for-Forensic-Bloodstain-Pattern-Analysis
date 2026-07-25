@@ -33,6 +33,7 @@ else:
 
 LOCAL_DATA_DIRS = [
     "/content/Task_1_Classification/Data/Augmented",
+    "/content/Task_1/Data/Augmented",
     "/content/Data/Augmented",
     "/content/Augmented"
 ]
