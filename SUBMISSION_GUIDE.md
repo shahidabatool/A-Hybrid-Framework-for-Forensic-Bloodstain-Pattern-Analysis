@@ -62,4 +62,8 @@ Due to the size of the datasets (over 20 GB of raw and processed high-resolution
 - `Task_1_Classification/Text/`: Sourced subfolders from Mendeley, Zenodo, and Kaggle.
 - `Task_2_TSD/Text/BloodNet_50k_Images/`: Sourced rabbit bloodstain datasets.
 
-*To reproduce training and data preprocessing from scratch, download the datasets from the shared university cloud drive and extract them back into the directories listed above.*
+### 🔗 Complete Project Drive Archive:
+To access the full workspace—including all raw/augmented datasets, intermediate processing checkpoints, and pre-trained `.pth` weights—please download them directly from the shared Drive folder:
+👉 **[Access the Full Project Archive on Google Drive](https://drive.google.com/drive/folders/1Qg8CjBzJ2wPJIfGgGEfSezEaNndCxuGy?usp=sharing)**
+
+To reproduce training, data preprocessing, or local inference, simply copy/download the folders from the Drive archive and merge them into the respective locations in your local cloned directory.

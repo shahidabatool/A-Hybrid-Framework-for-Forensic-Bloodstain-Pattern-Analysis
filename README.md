@@ -16,6 +16,12 @@ Below is the complete architectural layout of the decision support pipeline:
 
 ---
 
+## 💾 Shared Google Drive Folder (Complete Project Archive)
+Because raw bloodstain datasets (20GB+) and pre-trained deep learning weight files (`.pth`) exceed GitHub size limits, the entire project workspace—including all raw/augmented data, pre-trained weights, and the directory structure—has been archived on Google Drive:
+👉 **[Access the Full Project Archive on Google Drive](https://drive.google.com/drive/folders/1Qg8CjBzJ2wPJIfGgGEfSezEaNndCxuGy?usp=sharing)**
+
+---
+
 ## 📂 Codebase Directory Layout
 
 ```

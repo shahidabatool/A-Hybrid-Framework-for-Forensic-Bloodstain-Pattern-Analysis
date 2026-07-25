@@ -33,13 +33,16 @@ This method clones the code repository directly from GitHub into Colab's high-sp
 %cd A-Hybrid-Framework-for-Forensic-Bloodstain-Pattern-Analysis
 ```
 
-### Method 2: Mount Personal Google Drive (For persistent development & custom datasets)
-If you are developing custom features and have the repository folder synced on your personal Google Drive, mount it:
+### Method 2: Mount Personal Google Drive (Recommended for persistent development & review)
+If you want to run the code using the files on your Google Drive:
+1. Open the [Shared Project Archive on Google Drive](https://drive.google.com/drive/folders/1Qg8CjBzJ2wPJIfGgGEfSezEaNndCxuGy?usp=sharing).
+2. Click the dropdown next to the `MRP` folder name and select **Add shortcut to Drive** $\rightarrow$ select **My Drive**.
+3. Run the mount cell in Google Colab:
 ```python
 from google.colab import drive
 drive.mount('/content/drive')
-# Change directory to your custom repository folder on Drive:
-%cd /content/drive/MyDrive/A-Hybrid-Framework-for-Forensic-Bloodstain-Pattern-Analysis
+# Navigate directly to the shortcut folder:
+%cd /content/drive/MyDrive/MRP
 ```
 
 ---
