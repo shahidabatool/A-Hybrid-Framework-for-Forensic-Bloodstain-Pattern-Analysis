@@ -12,7 +12,7 @@ This repository contains the complete decision support system developed for fore
 ### 🎨 Forensic AI Workflow
 Below is the complete architectural layout of the decision support pipeline:
 
-![Forensic AI Workflow](assets/project_workflow.png)
+![Forensic AI Workflow](assets/AI_Bloodstain_Analysis_System_Architecture.png)
 
 ---
 
