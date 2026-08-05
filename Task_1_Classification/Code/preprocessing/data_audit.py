@@ -1,3 +1,23 @@
+# =============================================================================
+# BPA DATASET DISTRIBUTION AUDIT
+#
+# This script performs a quality-control audit of the bloodstain pattern
+# classification dataset before model training and evaluation. It analyzes the
+# number of samples available in each class, calculates class distribution
+# percentages, and checks for potential class imbalance.
+#
+# The audit is performed on:
+#   1. Original organized dataset before augmentation.
+#   2. Parent-split augmented training dataset to verify class balancing.
+#   3. Clean unaugmented test dataset to confirm natural evaluation
+#      distribution.
+#
+# The imbalance analysis identifies classes with insufficient representation
+# that may negatively affect model learning and evaluation reliability.
+# This ensures that dataset preparation, augmentation, and splitting steps have
+# produced a suitable and consistent dataset for CNN-based bloodstain pattern
+# classification.
+# =============================================================================
 import os
 
 BASE_DIR = "/Users/shahidabatool/Desktop/MRP/Task_1_Classification"
