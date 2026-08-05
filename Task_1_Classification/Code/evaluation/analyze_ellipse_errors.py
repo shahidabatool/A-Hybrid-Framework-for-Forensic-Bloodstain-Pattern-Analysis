@@ -1,3 +1,24 @@
+# =============================================================================
+# QUANTITATIVE ELLIPSE-FITTING ERROR ANALYSIS FOR BLOODSTAIN SHAPE VALIDATION
+#
+# This script evaluates the geometric consistency of detected bloodstain contours
+# by comparing extracted stain shapes against fitted ellipses. The analysis is
+# performed on preprocessed test images to quantify how closely each bloodstain
+# follows an elliptical model commonly used in Bloodstain Pattern Analysis (BPA).
+#
+# For each detected stain contour, ellipse fitting is performed and evaluated
+# using multiple geometric metrics, including Intersection over Union (IoU),
+# ellipse-to-contour area difference, aspect ratio, and estimated impact angle.
+#
+# The calculated metrics provide quantitative measurements of stain shape
+# approximation quality and support validation of geometric assumptions used
+# in BPA-based analysis. Results are exported as CSV files and summary reports
+# containing class-level and overall statistics.
+#
+# This evaluation is performed independently from CNN classification and is used
+# to analyze the physical characteristics of bloodstain morphology after image
+# preprocessing.
+# =============================================================================
 import os
 import cv2
 import numpy as np
