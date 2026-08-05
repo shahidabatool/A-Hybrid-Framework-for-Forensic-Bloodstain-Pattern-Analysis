@@ -1,3 +1,26 @@
+# =============================================================================
+# GUNSHOT IMAGE CLEANING, TILING, AND PREPROCESSING
+#
+# This script preprocesses Gunshot bloodstain images by detecting blood regions,
+# removing irrelevant background information, and generating clean regions of
+# interest suitable for CNN-based classification.
+#
+# Due to the presence of extremely high-resolution bloodstain card images, the
+# script includes an adaptive processing strategy. Large images are divided into
+# smaller tiles, and only tiles containing sufficient blood pixels are retained.
+# Smaller images are processed using direct blood detection and cropping.
+#
+# Blood regions are identified using HSV color segmentation, followed by contour
+# filtering to remove noise and isolate valid stain patterns. Extracted regions
+# are placed on a uniform white background to reduce irrelevant visual variation.
+#
+# To prevent excessive dataset growth, a maximum number of tiles is selected per
+# source image while maintaining reproducibility through fixed random sampling.
+# Multiprocessing is used to accelerate preprocessing across multiple images.
+#
+# The cleaned outputs are saved for subsequent dataset splitting, augmentation,
+# and CNN model training.
+# =============================================================================
 import os
 os.environ["OPENCV_IO_MAX_IMAGE_PIXELS"] = str(pow(2, 40))
 
