@@ -1,3 +1,19 @@
+# =============================================================================
+# PASSIVE DRIP DATASET EXTRACTION AND CONSOLIDATION
+#
+# This script extracts representative bloodstain images from the raw Passive
+# Drip dataset, which is organized into multiple height-based folders and
+# nested sample directories. It searches each sample directory for the most
+# appropriate image using predefined filename patterns and a fallback search
+# strategy when necessary.
+#
+# Extracted images are copied into a single destination folder and renamed
+# using the experimental height and sample identifier to prevent filename
+# conflicts. The script also removes previously extracted files and generates
+# an audit summary reporting the number of successfully extracted images and
+# any missing samples, ensuring dataset completeness before preprocessing and
+# model training.
+# =============================================================================
 import os
 import shutil
 
