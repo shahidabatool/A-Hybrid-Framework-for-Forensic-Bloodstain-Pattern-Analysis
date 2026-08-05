@@ -1,3 +1,23 @@
+# =============================================================================
+# PASSIVE DRIP IMAGE CLEANING AND PREPROCESSING
+#
+# This script preprocesses Passive Drip bloodstain images by automatically
+# detecting blood regions, removing irrelevant background information, and
+# extracting the stain region of interest for CNN-based classification.
+#
+# Blood detection is performed using HSV color segmentation combined with
+# pixel-level BGR color constraints to reduce false detections from dark or
+# neutral objects such as gloves and shadows. Detected blood regions are
+# filtered using contour analysis, cropped with additional padding, and placed
+# on a uniform white background to reduce unwanted image variation.
+#
+# Large images are downsampled before processing to improve computational
+# efficiency while preserving important stain characteristics. Multiprocessing
+# is applied to process multiple images simultaneously.
+#
+# The cleaned Passive Drip images are saved for subsequent augmentation,
+# train/test splitting, and CNN model training.
+# =============================================================================
 import os
 os.environ["OPENCV_IO_MAX_IMAGE_PIXELS"] = str(pow(2, 40))
 
