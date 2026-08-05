@@ -1,3 +1,27 @@
+# =============================================================================
+# CONVNEXT MULTI-TASK MODEL EVALUATION FOR BLOODSTAIN PATTERN ANALYSIS
+#
+# This script evaluates the trained ConvNeXt-based multi-task CNN model on the
+# held-out test dataset for automated bloodstain pattern classification.
+#
+# The model performs two simultaneous classification tasks:
+# 1. Bloodstain pattern classification into four categories:
+#    Gunshot, Impact Spatter, Passive Drip, and Transfer/Wipe.
+# 2. Bloodstain mechanism classification into three categories:
+#    Passive, Low Velocity, and Medium/High Velocity.
+#
+# The script automatically detects the execution environment (local machine or
+# Google Colab), loads the appropriate dataset and trained model checkpoint,
+# and performs inference on both the original imbalanced test set and a
+# balanced subset for unbiased performance analysis.
+#
+# Evaluation metrics include precision, recall, F1-score, confusion matrices,
+# and multi-class ROC-AUC curves. Generated reports and visualizations are
+# saved in the Evaluation directory for final model assessment and reporting.
+#
+# The evaluation pipeline uses the same preprocessing and class mappings as the
+# training phase to ensure consistency between model development and testing.
+# =============================================================================
 import os
 import sys
 import torch
