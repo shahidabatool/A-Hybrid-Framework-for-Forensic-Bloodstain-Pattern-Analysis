@@ -1,3 +1,21 @@
+# =============================================================================
+# BPA DATASET ORGANIZATION AND FRAME EXTRACTION
+#
+# This script consolidates bloodstain pattern images from multiple public
+# datasets into a unified directory structure for CNN-based classification.
+# Static image datasets are copied into their corresponding class folders,
+# while video datasets are processed by extracting representative frames at
+# regular intervals.
+#
+# The script supports multiple data sources, including Kaggle, Zenodo,
+# HemoSpat, and Mendeley, and maps each sample to one of the five bloodstain
+# pattern classes (Gunshot, Impact Spatter, Passive Drip, Transfer Wipe, and
+# Cough Spatter). Files are renamed where necessary to prevent filename
+# collisions and preserve source information.
+#
+# Before processing, previously organized files are removed to ensure a clean
+# and reproducible dataset preparation pipeline.
+# =============================================================================
 import cv2
 import os
 import shutil
