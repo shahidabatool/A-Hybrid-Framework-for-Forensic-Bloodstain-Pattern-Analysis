@@ -1,3 +1,13 @@
+# =============================================================================
+# DATA LEAKAGE AUDIT
+#
+# This script verifies that no parent source image, scan, or video appears in
+# both the training and test datasets. It extracts the original source from
+# each filename, compares the unique parent sources between train and test for
+# every bloodstain class, reports any shared sources (data leakage), and saves
+# the audit results to a text file. This ensures the evaluation is performed on
+# independent data and helps prevent overly optimistic model performance.
+# ============================================================================
 import os
 import re
 
