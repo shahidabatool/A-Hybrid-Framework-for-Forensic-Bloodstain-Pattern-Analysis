@@ -1,3 +1,29 @@
+# =============================================================================
+# IMPACT SPATTER IMAGE CLEANING, TILING, AND PREPROCESSING
+#
+# This script preprocesses Impact Spatter images by detecting bloodstain regions,
+# removing irrelevant background information, and generating clean regions of
+# interest for CNN-based classification.
+#
+# Due to the presence of high-resolution bloodstain scans from multiple sources,
+# the script applies an adaptive processing strategy. Large images are divided
+# into smaller tiles, and only tiles containing sufficient blood regions are
+# retained. Smaller images are processed through direct blood detection and
+# region-of-interest cropping.
+#
+# Bloodstain detection is performed using HSV color segmentation with relaxed
+# red-color thresholds to accommodate variations in dried blood appearance,
+# lighting conditions, and image acquisition sources. Detected stain regions
+# are isolated using contour analysis and placed on a uniform white background
+# to reduce irrelevant background variation.
+#
+# A maximum number of tiles is selected per source image to prevent excessive
+# representation of individual samples while maintaining reproducibility through
+# fixed random sampling. Multiprocessing is used to accelerate preprocessing.
+#
+# The cleaned images are stored for subsequent dataset splitting, augmentation,
+# and CNN-based Impact Spatter classification.
+# =============================================================================
 import os
 os.environ["OPENCV_IO_MAX_IMAGE_PIXELS"] = str(pow(2, 40))
 
