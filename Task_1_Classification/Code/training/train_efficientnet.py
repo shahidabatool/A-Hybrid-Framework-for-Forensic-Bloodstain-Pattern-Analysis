@@ -1,3 +1,39 @@
+# =============================================================================
+# BPA Multi-Task EfficientNet-B0 Training Pipeline
+#
+# Description:
+# This script trains a multi-task deep learning model based on EfficientNet-B0
+# for Bloodstain Pattern Analysis (BPA). The model performs two simultaneous
+# classification tasks:
+#
+#   1. Pattern Classification:
+#      - Gunshot
+#      - Impact Spatter
+#      - Passive Drip
+#      - Transfer/Wipe
+#
+#   2. Impact Mechanism Classification:
+#      - Passive
+#      - Low Velocity
+#      - Medium/High Velocity
+#
+# Features:
+#   - Automatic Google Colab and local environment detection
+#   - Transfer learning using pretrained EfficientNet-B0 backbone
+#   - Multi-task learning with separate classification heads
+#   - Two-stage training strategy:
+#       Phase 1: Backbone frozen, train classification heads
+#       Phase 2: Full model fine-tuning
+#   - Class-weighted loss for handling class imbalance
+#   - Training history logging and performance curve generation
+#   - Model checkpoint saving and Google Drive backup support
+#
+# Frameworks:
+#   - PyTorch
+#   - Torchvision
+#   - TIMM
+#
+# =============================================================================
 import os
 import sys
 import torch
