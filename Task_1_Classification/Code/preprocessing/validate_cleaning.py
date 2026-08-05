@@ -1,3 +1,23 @@
+# =============================================================================
+# BEFORE AND AFTER IMAGE CLEANING VALIDATION VISUALIZATION
+#
+# This script generates visual comparisons between original bloodstain images
+# and their cleaned versions after preprocessing to validate the effectiveness
+# of the image cleaning pipeline before CNN model training.
+#
+# For each bloodstain class, representative images are selected from the
+# organized raw dataset and compared against the corresponding cleaned images.
+# The comparison highlights the effect of blood region extraction, background
+# removal, ROI cropping, and image normalization.
+#
+# Images are converted from BGR to RGB format for visualization using
+# Matplotlib. The generated figures provide a qualitative assessment of
+# preprocessing quality and help verify that important stain characteristics
+# are preserved while removing irrelevant background information.
+#
+# The before-and-after comparison figures are saved in the Evaluation folder
+# and are used for preprocessing validation and documentation.
+# =============================================================================
 import os
 import cv2
 import matplotlib.pyplot as plt
