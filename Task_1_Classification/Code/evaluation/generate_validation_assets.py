@@ -1,3 +1,27 @@
+# =============================================================================
+# Project: CNN-Based Bloodstain Pattern Classification with Impact and Temporal
+#          Parameter Estimation
+#
+# Description:
+# This script performs model interpretability and forensic validation for the
+# trained EfficientNet-B0 multi-task bloodstain pattern classification model.
+#
+# Methodology:
+# - Deep learning architecture: EfficientNet-B0
+# - Multi-task classification:
+#       1. Bloodstain Pattern Classification
+#       2. Bloodstain Mechanism Classification
+#
+# Analysis Techniques:
+# - Grad-CAM visualization for model decision interpretation.
+# - Ellipse fitting for bloodstain morphology analysis.
+# - Impact angle estimation using stain geometric properties.
+#
+# Outputs:
+# - Grad-CAM heatmap visualization.
+# - Ellipse fitting validation visualization.
+#
+# =============================================================================
 import os
 import cv2
 import torch
