@@ -1,3 +1,31 @@
+# =============================================================================
+# COUGH SPATTER IMAGE CLEANING AND PREPROCESSING
+#
+# This script preprocesses the Cough Spatter images by automatically detecting
+# bloodstain regions and removing irrelevant background information. Bloodstains
+# are identified using HSV color segmentation, while skin-colored regions and
+# non-blood objects are suppressed using YCrCb skin detection and additional
+# color-based filtering.
+#
+# After detecting valid bloodstain contours, the script computes a bounding box,
+# applies padding, crops the region of interest, and replaces the remaining
+# background with a uniform white background. Images that do not contain a valid
+# bloodstain are discarded.
+#
+# To improve processing efficiency, large images are downsampled before
+# analysis, and multiple images are processed in parallel using multiprocessing.
+# The cleaned images are saved for subsequent augmentation, dataset splitting,
+# and CNN model training.
+
+
+# NOTE:
+# Although the Cough Spatter class was excluded from the final model evaluation
+# due to parent-level data leakage arising from a single source video, this
+# preprocessing script is retained as part of the complete data preparation
+# pipeline. It may be reused in future work if additional independent Cough
+# Spatter data become available, allowing the class to be incorporated into the
+# classification model without leakage concerns.
+# =============================================================================
 import os
 os.environ["OPENCV_IO_MAX_IMAGE_PIXELS"] = str(pow(2, 40))
 
