@@ -1,3 +1,13 @@
+# =============================================================================
+# GUNSHOT DATASET PREPARATION
+#
+# This script prepares the Gunshot bloodstain dataset by grouping image tiles
+# according to their original parent image, then performing an 80/20 split at
+# the parent-image level to prevent data leakage. Training images are augmented
+# using Albumentations until the target size is reached, while test images are
+# sampled with a per-parent limit to prevent certain parent images from
+# dominating evaluation results.
+# =============================================================================
 import os
 import cv2
 import numpy as np
