@@ -1,3 +1,40 @@
+# =============================================================================
+# RESNET-50 MULTI-TASK MODEL EVALUATION FOR BLOODSTAIN PATTERN ANALYSIS
+#
+# This script evaluates a trained ResNet-50 based multi-task convolutional
+# neural network for Bloodstain Pattern Analysis (BPA) classification.
+# The model performs two simultaneous classification tasks:
+#
+# 1. Bloodstain Pattern Classification:
+#    - Gunshot
+#    - Impact Spatter
+#    - Passive Drip
+#    - Transfer/Wipe
+#
+# 2. Force Mechanism Classification:
+#    - Passive
+#    - Low Velocity
+#    - Medium/High Velocity
+#
+# The evaluation pipeline automatically detects whether it is executed in a
+# local environment or Google Colab and loads the appropriate dataset paths,
+# model checkpoint, and computational device (CUDA, MPS, or CPU).
+#
+# The ResNet-50 backbone is used as a feature extractor, with separate fully
+# connected classification heads for predicting bloodstain pattern type and
+# impact mechanism. The trained model is evaluated on both the original
+# imbalanced test dataset and a balanced test subset to provide reliable
+# performance comparison.
+#
+# Evaluation metrics include precision, recall, F1-score, confusion matrices,
+# and multi-class ROC-AUC curves for both classification tasks. Generated
+# reports and visualization outputs are automatically saved in the Evaluation
+# directory for quantitative model assessment and research documentation.
+#
+# This evaluation framework supports comparison between different CNN
+# architectures and validates the effectiveness of deep learning approaches for
+# automated bloodstain pattern recognition.
+# =============================================================================
 import os
 import sys
 import torch
