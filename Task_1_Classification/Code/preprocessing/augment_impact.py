@@ -1,3 +1,14 @@
+# =============================================================================
+# IMPACT SPATTER DATASET PREPARATION
+#
+# This script prepares the Impact Spatter dataset by grouping images according
+# to their original parent source to prevent data leakage between training and
+# testing sets. An 80/20 split is performed at the parent-image level, ensuring
+# that tiles or related images from the same source are not present in both
+# subsets. Training images are augmented using Albumentations until the target
+# size is reached, while test images are sampled with a per-parent limit to
+# maintain balanced evaluation.
+# =============================================================================
 import os
 import cv2
 import numpy as np
