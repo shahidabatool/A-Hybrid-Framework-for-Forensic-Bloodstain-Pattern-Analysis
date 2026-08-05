@@ -1,3 +1,12 @@
+# =============================================================================
+# COUGH SPATTER DATASET PREPARATION
+#
+# This script prepares the Cough Spatter dataset by performing a sequential
+# 80/20 train-test split based on video frame order to reduce temporal leakage.
+# Original training frames are copied first, then augmented using Albumentations
+# until the target number of training images is reached. Test images are copied
+# without augmentation to ensure unbiased model evaluation.
+# =============================================================================
 import os
 import cv2
 import numpy as np
