@@ -1,3 +1,27 @@
+# =============================================================================
+# TRANSFER WIPE IMAGE CLEANING AND PREPROCESSING
+#
+# This script preprocesses Transfer Wipe bloodstain images by automatically
+# detecting blood regions, removing irrelevant background information, and
+# extracting the stain region of interest for CNN-based classification.
+#
+# Blood detection is performed using HSV color segmentation combined with
+# pixel-level BGR color constraints to reduce false detections from dark or
+# neutral objects such as gloves and shadows. Skin color filtering using the
+# YCrCb color space is applied to reduce interference from hands and skin
+# regions commonly present in transfer wipe samples.
+#
+# Detected blood regions are filtered using contour analysis, cropped with
+# additional padding, and placed on a uniform white background to reduce
+# unwanted image variation while preserving important stain characteristics.
+#
+# Large images are downsampled before processing to improve computational
+# efficiency while maintaining relevant stain details. Multiprocessing is
+# applied to process multiple images simultaneously.
+#
+# The cleaned Transfer Wipe images are saved for subsequent augmentation,
+# train/test splitting, and CNN model training.
+# =============================================================================
 import os
 os.environ["OPENCV_IO_MAX_IMAGE_PIXELS"] = str(pow(2, 40))
 
