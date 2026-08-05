@@ -1,3 +1,25 @@
+# =============================================================================
+# PASSIVE DRIP DATASET PREPARATION
+#
+# This script prepares the Passive Drip dataset by grouping video frames based
+# on their parent source to prevent data leakage between training and testing
+# sets. An 80/20 parent-level split is applied so that frames from the same
+# drip sequence remain exclusively in either training or testing data.
+#
+# Training images are augmented using Albumentations to increase dataset
+# diversity and improve model generalization. In addition to standard image
+# transformations (brightness, rotation, scaling, perspective, and noise),
+# advanced shape-preserving transformations (Elastic Transform, Grid
+# Distortion, and Coarse Dropout) are included as regularization techniques to
+# reduce overfitting and prevent memorization of specific stain outlines.
+#
+# Note: Strong shape-based augmentations may affect fine morphological features
+# such as elongated drip patterns. Their impact should be considered during
+# model evaluation, especially for challenging Passive Drip variations.
+#
+# Test images are kept unmodified and sampled with a per-parent limit to ensure
+# balanced and unbiased performance evaluation.
+# ===============================================================================
 import os
 import cv2
 import numpy as np
