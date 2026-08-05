@@ -1,3 +1,37 @@
+# =============================================================================
+# EFFICIENTNET-B0 MULTI-TASK MODEL EVALUATION FOR BLOODSTAIN PATTERN ANALYSIS
+#
+# This script evaluates a trained EfficientNet-B0 based multi-task CNN model for
+# Bloodstain Pattern Analysis (BPA) classification. The model performs two
+# simultaneous prediction tasks:
+#
+# 1. Bloodstain Pattern Classification:
+#    - Gunshot
+#    - Impact Spatter
+#    - Passive Drip
+#    - Transfer/Wipe
+#
+# 2. Force Mechanism Classification:
+#    - Passive
+#    - Low Velocity
+#    - Medium/High Velocity
+#
+# The evaluation pipeline automatically detects the execution environment
+# (local machine or Google Colab), loads the appropriate dataset and trained
+# model checkpoint, and performs inference on the test dataset.
+#
+# Both raw imbalanced test evaluation and balanced test evaluation are performed
+# to measure model performance under realistic and controlled class distributions.
+# Classification metrics including precision, recall, F1-score, confusion
+# matrices, and multi-class ROC-AUC curves are generated for comprehensive
+# performance analysis.
+#
+# The script uses transfer learning with EfficientNet-B0 as the feature
+# extraction backbone and evaluates the learned representations for BPA pattern
+# recognition. Evaluation reports, confusion matrices, and ROC-AUC visualizations
+# are automatically saved in the Evaluation directory for further analysis and
+# reporting.
+# =============================================================================
 import os
 import sys
 import torch
