@@ -1,3 +1,35 @@
+# =============================================================================
+# BLOODSTAIN PATTERN ANALYSIS DATASET EXPLORATORY DATA ANALYSIS (EDA)
+#
+# This script performs comprehensive exploratory data analysis (EDA) on the
+# organized Bloodstain Pattern Analysis (BPA) image dataset before model
+# training. The objective is to quantify visual and morphological differences
+# between bloodstain pattern classes and identify dataset characteristics that
+# may influence CNN classification performance.
+#
+# For each image, the script extracts statistical and morphological features
+# including image dimensions, brightness, contrast, detected stain count,
+# droplet area distribution, droplet aspect ratio, and overall stain density.
+#
+# Blood regions are detected using HSV-based color segmentation combined with
+# YCrCb skin masking to reduce false detections from skin regions. Contour
+# analysis is then applied to identify individual stain components and extract
+# shape-related measurements.
+#
+# The extracted image-level statistics are saved as a CSV file and summarized
+# by bloodstain pattern class. A detailed text report is also generated,
+# describing observed characteristics of each class such as droplet frequency,
+# stain size distribution, and spatial density.
+#
+# The script additionally generates visualization plots including class
+# distribution, droplet count comparison, stain area comparison, aspect ratio
+# analysis, and count-versus-area feature mapping. These visualizations support
+# dataset validation, class separability analysis, and interpretation of CNN
+# classification results.
+#
+# All EDA outputs, including numerical statistics, reports, and figures, are
+# automatically saved in the Evaluation directory for research documentation.
+# =============================================================================
 import os
 # Increase pixel limit for high-res forensic scans
 os.environ["OPENCV_IO_MAX_IMAGE_PIXELS"] = str(pow(2,40))
