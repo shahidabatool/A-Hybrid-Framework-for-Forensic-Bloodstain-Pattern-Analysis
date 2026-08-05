@@ -1,3 +1,37 @@
+# =============================================================================
+# BPA Multi-Task ConvNeXt-Tiny Training Pipeline
+# 
+# Description:
+# This script trains a multi-task deep learning model based on ConvNeXt-Tiny
+# for Bloodstain Pattern Analysis (BPA). The model performs:
+#   1. Pattern Classification:
+#      - Gunshot
+#      - Impact Spatter
+#      - Passive Drip
+#      - Transfer/Wipe
+#
+#   2. Mechanism Classification:
+#      - Passive
+#      - Low Velocity
+#      - Medium/High Velocity
+#
+# Features:
+#   - Automatic Google Colab / Local environment detection
+#   - Transfer learning using pretrained ConvNeXt-Tiny backbone
+#   - Two-stage fine-tuning strategy:
+#       Phase 1: Train classification heads only
+#       Phase 2: Fine-tune full backbone
+#   - Multi-task loss optimization
+#   - Class-weighted pattern classification loss
+#   - Training history tracking and visualization
+#   - Model checkpoint saving
+#
+# Frameworks:
+#   - PyTorch
+#   - Torchvision
+#   - TIMM
+#
+# =============================================================================
 import os
 import sys
 import torch
