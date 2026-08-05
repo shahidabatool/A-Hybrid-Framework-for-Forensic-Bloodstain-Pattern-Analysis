@@ -1,3 +1,33 @@
+# =============================================================================
+# Bloodstain Pattern Analysis (BPA) Multi-Task Classification Using ResNet-50
+#
+# Description:
+# This script trains a deep learning model for automated bloodstain pattern
+# classification and impact mechanism prediction using a multi-task learning
+# approach.
+#
+# Model Architecture:
+# - Backbone: ResNet-50 (ImageNet pretrained)
+# - Task 1: Bloodstain pattern classification
+# - Task 2: Impact mechanism classification
+#
+# Training Strategy:
+# - Phase 1: Backbone frozen, classification heads trained
+# - Phase 2: Full model fine-tuning with reduced learning rate
+#
+# Features:
+# - Automatic Google Colab and local environment detection
+# - Transfer learning using TIMM pretrained ResNet-50
+# - Multi-task classification with dual output heads
+# - Class imbalance handling using weighted cross-entropy loss
+# - Training history logging and performance curve generation
+# - Model checkpoint saving and Google Drive backup support
+#
+# Outputs:
+# - Trained ResNet-50 model weights (.pth)
+# - Training history (.json)
+# - Loss and accuracy learning curves (.png)
+# =============================================================================
 import os
 import sys
 import torch
