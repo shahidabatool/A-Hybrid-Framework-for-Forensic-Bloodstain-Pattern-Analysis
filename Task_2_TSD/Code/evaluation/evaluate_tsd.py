@@ -1,4 +1,33 @@
-import os
+
+# ================================================================
+# Description:
+# This script evaluates multiple deep learning models for forensic
+# bloodstain aging classification based on Time Since Deposition (TSD).
+#
+# Objective:
+# Classify bloodstain images into three forensic aging categories:
+#   0 - Fresh          (1 day)
+#   1 - Intermediate   (7 and 14 days)
+#   2 - Aged           (21 and 28 days)
+#
+# Evaluated Models:
+#   1. BloodNet Baseline (5-class original TSD model)
+#   2. Fine-tuned ResNet-50 (3-class TSD classifier)
+#   3. EfficientNet-B0 (3-class TSD classifier)
+#   4. ConvNeXt-Tiny (3-class TSD classifier)
+#
+# Evaluation Methods:
+#   - Raw test set evaluation
+#   - Balanced holdout evaluation
+#   - Classification report
+#   - Confusion matrix
+#   - ROC-AUC analysis
+#
+# Dataset:
+#   Bloodstain images grouped into five deposition intervals:
+#   1d, 7d, 14d, 21d, and 28d.
+#
+# ================================================================import os
 import argparse
 import numpy as np
 import torch
