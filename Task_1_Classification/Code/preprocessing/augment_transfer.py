@@ -1,3 +1,21 @@
+# =============================================================================
+# TRANSFER WIPE DATASET PREPARATION
+#
+# This script prepares the Transfer Wipe bloodstain dataset by grouping images
+# according to their original parent source (video/frame sequence) to prevent
+# data leakage between training and testing sets. An 80/20 parent-level split is
+# applied so that frames from the same source remain exclusively in either the
+# training or testing subset.
+#
+# Training images are expanded using Albumentations-based augmentation,
+# including brightness/contrast adjustment, geometric transformations, and
+# noise injection to improve model robustness and generalization. Test images
+# remain unmodified and are sampled with a per-parent limit to reduce evaluation
+# bias from sources containing many frames.
+#
+# The final output contains a balanced augmented training set and an independent
+# test set for reliable model performance evaluation.
+# =============================================================================
 import os
 import cv2
 import numpy as np
