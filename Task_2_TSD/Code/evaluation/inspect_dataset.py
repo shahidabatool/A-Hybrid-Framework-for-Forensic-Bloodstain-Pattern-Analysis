@@ -1,3 +1,25 @@
+# ================================================================
+# Description:
+# This script performs an initial audit and exploratory data
+# analysis (EDA) of the BloodNet dataset used for Task 2 (Time
+# Since Deposition) model training and evaluation.
+#
+# Objective:
+# Inspect the raw dataset structure and metadata to verify
+# integrity before model development, including class balance,
+# missing values, and file counts across data splits.
+#
+# Checks Performed:
+#   1. Metadata CSV inspection (shape, columns, unique values,
+#      value counts, missing values)
+#   2. File count audit across data splits:
+#      train1, test, outside_test (per aging-interval subfolder)
+#
+# Dataset:
+#   Bloodstain images grouped into five deposition intervals:
+#   1d, 7d, 14d, 21d, and 28d.
+#
+# ================================================================
 import os
 import pandas as pd
 import numpy as np
