@@ -1,3 +1,28 @@
+# ================================================================
+# Description:
+# This script defines the BloodNet-50 architecture: a ResNet-50
+# backbone augmented with CBAM (Convolutional Block Attention
+# Module) attention layers, used for bloodstain forensic
+# classification tasks (pattern/force mechanism and TSD).
+#
+# Architecture Components:
+#   1. ChannelAttention  - channel-wise feature recalibration
+#                           (avg-pool + max-pool -> shared MLP)
+#   2. SpatialAttention   - spatial feature recalibration via
+#                           channel-pooled conv (kernel size 7)
+#   3. CBAM               - sequential channel + spatial attention
+#   4. Bottleneck         - standard ResNet bottleneck block with
+#                           CBAM applied after the third conv
+#   5. ResNet             - full ResNet-50 backbone (layers
+#                           [3, 4, 6, 3]) with configurable
+#                           num_classes
+#
+# Usage:
+#   model = bloodnet50(num_classes=3)   # e.g. TSD 3-class head
+#   model = bloodnet50(num_classes=5)   # e.g. original 5-class
+#                                          baseline head
+#
+# ================================================================
 import torch
 import torch.nn as nn
 
