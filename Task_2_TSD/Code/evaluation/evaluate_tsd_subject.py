@@ -1,3 +1,33 @@
+# ================================================================
+# Description:
+# This script performs subject-level (rabbit-level) performance
+# evaluation for Task 2 TSD models, computing per-subject accuracy
+# and Wilson score confidence intervals to assess generalization
+# across individual rabbits in the holdout test set.
+#
+# Objective:
+# For each rabbit subject, calculate classification accuracy and
+# 95% confidence intervals across the three TSD forensic classes:
+#   0 - Fresh          (1 day)
+#   1 - Intermediate   (7 and 14 days)
+#   2 - Aged           (21 and 28 days)
+#
+# Evaluated Models:
+#   1. BloodNet Baseline (5-class original TSD model)
+#   2. EfficientNet-B0 (3-class TSD classifier)
+#   3. ConvNeXt-Tiny (3-class TSD classifier)
+#   4. Fine-Tuned ResNet-50 with CBAM (3-class TSD classifier)
+#
+# Evaluation Method:
+#   - Group predictions by rabbit_id (mapped from image filename
+#     via metadata CSV)
+#   - Compute per-subject and overall accuracy
+#   - Compute Wilson score confidence intervals (95%)
+#
+# Output:
+#   CSV of subject-level performance metrics (accuracy, CI, N)
+#
+# ================================================================
 import os
 import pandas as pd
 import numpy as np
