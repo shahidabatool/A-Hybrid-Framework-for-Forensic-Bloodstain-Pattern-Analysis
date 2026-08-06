@@ -1,4 +1,3 @@
-
 # ================================================================
 # Description:
 # This script evaluates multiple deep learning models for forensic
@@ -27,7 +26,8 @@
 #   Bloodstain images grouped into five deposition intervals:
 #   1d, 7d, 14d, 21d, and 28d.
 #
-# ================================================================import os
+# ================================================================
+import os
 import argparse
 import numpy as np
 import torch
