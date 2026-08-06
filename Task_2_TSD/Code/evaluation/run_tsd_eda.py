@@ -1,3 +1,35 @@
+# ================================================================
+# Description:
+# This script performs detailed exploratory data analysis (EDA)
+# for Task 2 (Time Since Deposition) prior to model training,
+# combining rabbit subject/demographic analysis with pixel-level
+# color degradation analysis of bloodstain images over time.
+#
+# Objective:
+# Validate dataset structure and confirm expected physical/chemical
+# aging trends in bloodstain color (hemoglobin oxidation/browning)
+# across the five deposition intervals.
+#
+# Analyses Performed:
+#   1. Rabbit-level split verification (subject distribution across
+#      train/dev/test)
+#   2. Rabbit demographic summaries (gender, weight, age)
+#   3. TSD interval distribution across splits
+#   4. Color channel (RGB) degradation trend analysis on sampled
+#      blood pixels
+#   5. Red/Green and Red/Blue ratio analysis (chemical indicators
+#      of aging)
+#   6. Visual drying sample grid (1d, 7d, 14d, 21d, 28d)
+#
+# Dataset:
+#   Bloodstain images grouped into five deposition intervals:
+#   1d, 7d, 14d, 21d, and 28d.
+#
+# Outputs:
+#   Descriptive statistics text file + 4 diagnostic plots saved
+#   to eda_plots/
+#
+# ================================================================
 import os
 import pandas as pd
 import numpy as np
