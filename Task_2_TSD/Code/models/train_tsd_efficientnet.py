@@ -1,3 +1,30 @@
+# ================================================================
+# Description:
+# This script trains an EfficientNet-B0 model for Task 2 (Time
+# Since Deposition) forensic bloodstain classification, mapping
+# the five aging intervals into three forensic classes.
+#
+# Objective:
+# Classify bloodstain images into three forensic aging categories:
+#   0 - Fresh          (1 day)
+#   1 - Intermediate   (7 and 14 days)
+#   2 - Aged           (21 and 28 days)
+#
+# Model:
+#   EfficientNet-B0 (ImageNet pretrained, 3-class classification
+#   head)
+#
+# Training Details:
+#   - Optimizer: Adam
+#   - Loss: CrossEntropyLoss
+#   - Augmentation: random horizontal flip, random rotation (15°)
+#   - Best checkpoint saved on validation accuracy
+#
+# Output:
+#   Best model checkpoint (best_tsd_model_efficientnet.pth) +
+#   training history CSV (loss/accuracy per epoch)
+#
+# ================================================================
 import os
 import time
 import argparse
